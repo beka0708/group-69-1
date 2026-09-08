@@ -3,10 +3,11 @@ import logging
 from aiogram import Bot, Dispatcher, F
 from config import BOT_TOKEN
 from src.handlers import router
+from aiogram.fsm.storage.memory import MemoryStorage
 
 
 bot = Bot(token=BOT_TOKEN)      # это обьект или экземпляр класса
-dp = Dispatcher()               # обработчик входящих обновлений
+dp = Dispatcher(storage=MemoryStorage())               # обработчик входящих обновлений
 
 
 async def main():
